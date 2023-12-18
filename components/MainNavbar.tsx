@@ -11,6 +11,11 @@ const MainNavbar = ({ className }: { className?: string }) => {
 
   const routes: { href: string; label: string; active: boolean }[] = [
     {
+      href: `/${params.storeId}`,
+      label: "Overview",
+      active: pathName === `/${params.storeId}`,
+    },
+    {
       href: `/${params.storeId}/settings`,
       label: "Settings",
       active: pathName === `/${params.storeId}/settings`,
