@@ -14,13 +14,14 @@ import Heading from "@/components/ui/heading";
 import { Input } from "@/components/ui/input";
 import AlertModal from "@/components/ui/modals/alert-modal";
 import { Separator } from "@/components/ui/separator";
+import { useOrigin } from "@/hooks/use-origin";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Store } from "@prisma/client";
 import axios from "axios";
 import { Trash } from "lucide-react";
 import { useParams, useRouter } from "next/navigation";
 import { useState } from "react";
-import { set, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { z } from "zod";
 
@@ -33,6 +34,7 @@ type SettingsFormValues = z.infer<typeof formSchema>;
 const SettingsForm = ({ initialData }: { initialData: Store }) => {
   const router = useRouter();
   const params = useParams();
+  const origin = useOrigin();
 
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -120,7 +122,11 @@ const SettingsForm = ({ initialData }: { initialData: Store }) => {
         </form>
       </Form>
       <Separator />
-      <ApiAlert title="test" description={`${origin}/api/${params.storeId}`} varient="public" />
+      <ApiAlert
+        title="NEXT_PUBLIC_API_URL"
+        description={`${origin}/api/${params.storeId}`}
+        varient="public"
+      />
     </>
   );
 };
