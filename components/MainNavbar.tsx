@@ -1,9 +1,8 @@
-"use client"
+"use client";
 
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { useParams, usePathname } from "next/navigation";
-import React from "react";
 
 const MainNavbar = ({ className }: { className?: string }) => {
   const params = useParams();
@@ -24,6 +23,11 @@ const MainNavbar = ({ className }: { className?: string }) => {
       href: `/${params.storeId}/categories`,
       label: "Categories",
       active: pathName === `/${params.storeId}/categories`,
+    },
+    {
+      href: `/${params.storeId}/sizes`,
+      label: "Sizes",
+      active: pathName === `/${params.storeId}/sizes`,
     },
     {
       href: `/${params.storeId}/settings`,
