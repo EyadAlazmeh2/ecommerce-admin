@@ -1,0 +1,18 @@
+{
+  "sqltools.connections": [
+    {
+      "pgOptions": {
+        "ssl": true
+      },
+      "previewLimit": 50,
+      "server": "local-hacker-12958.7tt.cockroachlabs.cloud",
+      "port": 26257,
+      "driver": "CockroachDB",
+      "name": "Cockroach",
+      "database": "EcommerceAdmin",
+      "username": "eyado",
+      "password": "OTkFZuk7W8lHCrk8vhCGJw",
+      "connectionTimeout": 15
+    }
+  ]
+}
