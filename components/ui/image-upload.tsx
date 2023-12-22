@@ -46,6 +46,7 @@ const ImageUpload = ({
                   onClick={() => onRemove(url)}
                   variant="destructive"
                   size="icon"
+                  disabled={disabled}
                 >
                   <Trash className="h-4 w-4" />
                 </Button>
